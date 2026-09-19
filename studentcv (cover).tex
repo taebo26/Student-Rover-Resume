@@ -1,0 +1,234 @@
+%-------------------------
+% Rover Resume - Star Template
+% Link: https://github.com/subidit/rover-resume
+%
+% CUSTOM COMMANDS \aux{} and \rside{} for part formatting
+% eg. \subsection{Company Name \aux{Designation} \rside{Duration}}
+% Double lined titles with \subsection{} and \subsubsection{}
+% \linkicon gives external link icon
+
+% Slight modifications by cl2024
+
+% use XeLaTeX to compile 
+%-------------------------
+
+
+
+
+\documentclass[11pt]{article}
+
+
+
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage[sfdefault,semibold,lf]{FiraSans}
+\usepackage[
+        letterpaper,% other options: a3paper, a4paper a5paper, etc
+        left=1in,
+        right=1in,
+        top=1in,
+        bottom=1.5in,
+        % use vmargin=2cm to make vertical margins equal to 2cm.
+        % us  hmargin=3cm to make horizontal margins equal to 3cm.
+        % use margin=3cm to make all margins  equal to 3cm.
+]
+{geometry}
+
+
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{141E61} %Penn Blue
+\definecolor{rocket}{HTML}{CC4001} %Rocket Orange
+
+
+\newcommand{\linkicon}{
+  \color{gray}{\footnotesize\raisebox{1pt}{\faIcon{external-link-alt}}}
+}
+
+\setcounter{secnumdepth}{0}
+%\pdfgentounicode=1
+
+
+%====== LIST FORMATTING ======
+\usepackage{enumitem}
+\setlist[itemize]{nosep, left=0pt .. 1.5em}
+\setlist[enumerate]{left=0pt..1.5em}
+\setlist[description]{itemsep=0pt}
+
+
+%====== TITLE FORMATTING ======
+\usepackage{xhfill}
+\usepackage{soul}
+\newcommand{\midrule}[1]{
+  \leavevmode
+  \xrfill[.5ex]{1pt}[accent]~\so{#1}~\xrfill[.5ex]{1pt}[accent]
+}
+
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{2\bigskipamount}{*1}
+\titlespacing{\subsection}{0pt}{\bigskipamount}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{\midrule}
+\titleformat*{\subsection}{\large\bfseries\scshape}
+
+
+%====== CUSTOM COMMANDS ======
+\newcommand{\aux}[1]{
+  $|$ \space {\normalfont\itshape #1}%
+}
+
+\newcommand{\rside}[1]{
+  \hfill {\normalfont\color{accent} #1}%
+}
+
+\setlength\parindent{0pt} %no indent within entire document
+
+\newcommand{\letterspace}{\vspace*{.5cm}} %letter spacing
+\newcommand{\sigblock}{\vspace*{1.5cm}} % signature spacing
+
+
+
+
+%====== FOOTER ======
+%\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+%\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} %default=0
+
+% Replace 'Star Rover' with your name in next line
+\fancyfoot[L]{\small\color{gray} Student Cover Letter} %*-- Page
+\fancyfoot[C]{\small\color{gray} \today \\ {\tiny{\sc{typeset} in}}\\ \LaTeX} 
+\fancyfoot[R]{\small\color{gray} \thepage} 
+
+%*-- Page \thepage\ of \pageref*{LastPage}}
+
+%\pagestyle{fancy} % empty=nothing; plain=just page number; fancy 1 of 2  after resume-- Page \thepage\ of \pageref*{LastPage}} 
+  
+% uncomment previous line to hide page numbering
+
+
+%====== PACKAGES ======
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage[bookmarks=false,hidelinks]{hyperref}
+\usepackage{lipsum}
+
+
+%%%%%Specialized Dummy Sentences%%%%%
+
+% Define the dummy sentence, an ancient palindrome.
+%\def\sator{Sator Arepo tenet opera rotas.}
+%\def\sator0{Sator Arepo tenet opera rotas}
+%\def\sator:{Sator Arepo tenet opera rotas:}
+
+% Create a command to print the sentence repeatedly.
+% Argument #1 is the number of times to repeat it.
+%\newcount\loopcounter
+%\def\dummysentences#1{%
+ %   \loopcounter = #1
+%    \loop
+%        \sator\ %
+ %       \advance\loopcounter by -1
+ %       \ifnum\loopcounter > 0
+ %   \repeat%
+%}
+
+%example
+
+%\sator
+
+%\dummysentences{5}
+
+%\begin{itemize}
+%\item \sator
+%\item \dummysentences{3}
+%\item \dummysentences{2}
+%\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[none]{hyphenat} % to eliminate all hyphenations
+%\sloppy
+
+%====== FINISH PREAMBLE ======
+
+%====== DOCUMENT STARTS HERE ======
+
+
+\begin{document}
+
+\sloppy
+
+
+%====== BANNER ======
+
+\begin{center}
+  {
+    \fontsize{36}{12} 
+    \fontseries{heavy}\selectfont
+    \color{rocket} 
+    STUDENT NAME % YOUR NAME HERE
+  }  
+\end{center}
+   \vspace*{-.3in} %\medskip
+\begin{center}   
+\hspace*{-.15in}   {\color{gray}{\faHome}} 100 USA Rd., All American Town, ST 99999 \\
+\hspace*{-.15in}  \href{tel:8901234567}{{\color{gray}{\faPhone}} (890) 123-4567} | 
+  \href{mailto:usastudent@gmail.com}{{\color{gray}{\faEnvelope}} usastudent@gmail.com} | 
+\href{https://instagram.com/username}{{\color{gray}{\faInstagram}} username}   
+%  \href{https://github.com/yourusername}{{\color{gray}{\faGithub}} username} \quad
+  % \href{https://www.linkedin.com/in/yourprofile}{{\color{gray}{\faLinkedin}} profile-name} \quad
+ % \href{https://github.com/}{{\color{gray}{\faLink}} starportfolio.com} 
+\end{center}
+
+%====== BANNER END ======
+
+%Hiring Company
+
+\vspace*{.5in}
+{\includegraphics[scale=.1]{logo2.png} {\textbf{Rocket Manufacturing}}}\\
+\noindent Hiring Manager's Name \\
+912 Company Address \\
+City, State, Zip Code \\
+517-444-6098 \\
+hiring.manager@gmail.com\\ % Contact information of the employer. Make sure to end every row with "\\"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%==========LETTER BEGINS========
+
+\vspace*{.5cm}
+Dear Mr. Lastname,\\
+
+\hspace*{.5cm} \lipsum*[2][3-9] \\ % Command to generate dummy text
+
+\lipsum*[3][4-10] \\
+
+\lipsum*[1][2-6] \\
+
+\letterspace
+Sincerely,
+
+\sigblock
+Your Name
+
+\vspace*{1cm}
+\begin{center}
+{\color{darkgray} -- References available upon request --} 
+\end{center}
+\vfill
+
+\end{document}
+
+
+%\begin{itemize}
+ %   \item \lipsum*[1][7]
+%    \item \lipsum*[6][8]
+ %   \item \lipsum*[5][9]
+%\end{itemize}
+%\vspace*{.2in}
+
+

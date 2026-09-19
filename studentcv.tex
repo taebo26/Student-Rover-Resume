@@ -1,0 +1,249 @@
+%-------------------------
+% Rover Resume - Star Template
+% Link: https://github.com/subidit/rover-resume
+%
+% CUSTOM COMMANDS \aux{} and \rside{} for part formatting
+% eg. \subsection{Company Name \aux{Designation} \rside{Duration}}
+% Double lined titles with \subsection{} and \subsubsection{}
+% \linkicon gives external link icon
+
+% Slight modifications by cl2024 
+% Use quickbuild with PDFLaTeX to compile (original)
+%  --> Use XeLaTeX to compile
+%-------------------------
+
+\documentclass[11pt]{article}
+
+\usepackage{pdfpages}
+
+\usepackage{fontawesome5} %icons
+\usepackage{graphicx} % add images
+\usepackage{comment} % eliminate code
+\usepackage[sfdefault,semibold,lf]{FiraSans} %font
+%\usepackage[a4paper,margin=1in]{geometry}
+
+\usepackage[
+        letterpaper,% other options: letterpaper, a3paper, a4paper a5paper, etc
+        left=1in,
+        right=1in,
+        top=1in,
+        bottom=1.5in,
+        % use vmargin=2cm to make vertical margins equal to 2cm.
+        % us  hmargin=3cm to make horizontal margins equal to 3cm.
+        % use margin=3cm to make all margins  equal to 3cm.
+]
+{geometry}
+
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{141E61} %Penn Blue
+\definecolor{rocket}{HTML}{CC4001} %Rocket Orange
+
+\newcommand{\linkicon}{
+  \color{gray}{\footnotesize\raisebox{1pt}{\faIcon{external-link-alt}}}
+}
+
+\setcounter{secnumdepth}{0}
+%\pdfgentounicode=1
+
+
+%====== LIST FORMATTING ======
+\usepackage{enumitem}
+\setlist[itemize]{nosep, left=0pt .. 1.5em}
+\setlist[enumerate]{left=0pt..1.5em}
+\setlist[description]{itemsep=0pt}
+
+
+%====== TITLE FORMATTING ======
+\usepackage{xhfill}
+\usepackage{soul}
+\newcommand{\midrule}[1]{
+  \leavevmode
+  \xrfill[.5ex]{1pt}[accent]~\so{#1}~\xrfill[.5ex]{1pt}[accent]
+}
+
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{2\bigskipamount}{*1}
+\titlespacing{\subsection}{0pt}{\bigskipamount}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\large\bfseries\uppercase}{}{}{\midrule}
+\titleformat*{\subsection}{\large\bfseries\scshape}
+
+
+%====== CUSTOM COMMANDS ======
+\newcommand{\aux}[1]{
+  $|$ \space {\normalfont\itshape #1}%
+}
+
+\newcommand{\rside}[1]{
+  \hfill {\normalfont\color{accent} #1}%
+}
+
+
+%====== FOOTER ======
+%\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+%\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Replace 'Star Rover' with your name in next line
+\fancyfoot[L]{\small\color{gray} Student Resum\'e} %*-- Page
+\fancyfoot[C]{\small\color{gray} \today \\ {\tiny{\sc{typeset} in}}\\ \LaTeX} 
+\fancyfoot[R]{\small\color{gray} 2} %\thepage number
+
+%*-- Page \thepage\ of \pageref*{LastPage}}
+
+%\pagestyle{fancy} % empty=nothing; plain=just page number; fancy 1 of 2  after resume-- Page \thepage\ of \pageref*{LastPage}} 
+  
+% uncomment previous line to hide page numbering
+
+
+%====== PACKAGES ======
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage[bookmarks=false,hidelinks]{hyperref}
+
+
+%====== FINISH PREAMBLE ======
+
+%====== DOCUMENT STARTS HERE ======
+
+
+\begin{document}
+
+%\include{\studentcv (cover).tex}
+
+
+\includepdf[pages={1}]{studentcv (cover).pdf} % adds the Cover
+
+
+%====== BANNER ======
+
+%%Undo comment to include a picture
+ %\hspace*{5in} \includegraphics[scale=.035]{boy.png}
+ 
+\begin{center}
+  {
+    \fontsize{36}{12} 
+    \fontseries{monospace}\selectfont
+    \color{rocket} 
+    STUDENT NAME % YOUR NAME HERE
+  }  
+\end{center}
+   \vspace*{-.3in} %\medskip
+\begin{center}   
+\hspace*{-.15in}   {\color{gray}{\faHome}} 100 USA Rd., All American Town, ST 99999 \\
+\hspace*{-.15in}  \href{tel:8901234567}{{\color{gray}{\faPhone}} (890) 123-4567} | 
+  \href{mailto:usastudent@gmail.com}{{\color{gray}{\faEnvelope}} usastudent@gmail.com} | 
+\href{https://instagram.com/username}{{\color{gray}{\faInstagram}} username}  
+   
+%  \href{https://github.com/yourusername}{{\color{gray}{\faGithub}} username} \quad
+  % \href{https://www.linkedin.com/in/yourprofile}{{\color{gray}{\faLinkedin}} profile-name} \quad
+ % \href{https://github.com/}{{\color{gray}{\faLink}} starportfolio.com} 
+\end{center}
+
+
+  
+%====== BANNER END ======
+
+\section{Education}
+%==========
+\subsection{All American High School \includegraphics[scale=.1]{logo2.png} \rside{All American Town, State}}  %\aux{Graduate} 
+\subsubsection{Graduate (3.84) \rside{2024}}
+\begin{itemize}
+  \item Extracurricular activities
+  \item Relevant Coursework
+  \item Special Claim to Fame
+\end{itemize}
+
+
+\section{Experience}
+%==========
+\subsection{Present Job \rside{Location}}
+\subsubsection{Present Job Title \rside{Date 2022 -\emph{Present}}}
+\begin{itemize}
+  \item Task or Responsibility 1
+  \item Task or Responsibility 2 
+  \item Task or Responsibility 3
+\end{itemize}
+
+\subsection{Previous Job \rside{Town, State}}
+\subsubsection{Previous Job Title \rside{Jan 2022 -- Dec 2022}}
+\begin{itemize}
+  \item Task or Responsibility 1 
+  \item Task 2 
+  \item Task 3
+\end{itemize}
+
+\subsubsection{Workforce Intern \rside{Jun 2020 -- Dec 2021}}
+\begin{itemize}
+  \item Management Training
+  \item Open/Close Business
+\end{itemize}
+
+
+\section{Skills and Activities}
+%===============
+\begin{description}
+  \item[Laboratory] trades, lab techniques, projects, research
+  \item[Technical] List computer software and programming  
+  \item[Language] List foreign/computer languages and your level of fluency 
+  \item[Interests] List activities or hobbies that you enjoy
+\end{description}
+
+
+\section{Awards \& Certificates}
+%=======================
+\begin{enumerate}[label=\null, left=0pt..0pt, itemsep=0pt]
+  \item Certificate 1 info \rside{2023}
+  \item Certificate 2 info \rside{2022}
+  \item Award 1 info \rside{2021}
+\end{enumerate}
+
+
+%%%%%Extra Headings%%%%%%%%
+
+\begin{comment} % eliminates section until it is uncommented
+\section{Publications}
+%=====================
+\begin{enumerate}
+  \item A. Vaswani et al., “Attention is All you Need,” arXiv (Cornell University), vol. 30, pp. 5998 – 6008, Jun. 2017, [Online]. Available: \url{https://arxiv.org/pdf/1706.03762v5}
+  \item C. Darwin and J. Murray, \textit{On the origin of species by means of natural selection, or, The preservation of favoured races in the struggle for life.} 1859. doi: 10.5962/bhl.title.82303.
+\end{enumerate}
+
+
+\section{Awards}
+%===============
+\begin{description}
+  \item [2023] Award 1 info
+  \item [2022] Award 2 info
+  \item [2021] Award 3 info
+\end{description}
+
+\end{comment}
+
+
+%%%%Extra Headings%%%%%%%
+
+\begin{comment} % This eliminates the section. uncomment  to add.
+\section{Projects}
+%=================
+\subsection{Lunar Rover Project \aux{\href{https://robotics.nasa.gov/lmr/}{Link \linkicon}} \rside{2012 -- 13}}
+\begin{itemize}
+  \item LIDAR array, GPS, Variable FOV camera, Python, C/C++
+  \item Designed the rover to be modular, reconfigurable for sensor systems, handle science payloads, storage space, surplus resources, and robotics addons. % These modules shall be supported by centralized power and data ports. 
+\end{itemize}
+
+\subsection{Mars Rover \aux{\href{https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/}{Project link \linkicon}} \rside{Feb 2012}}
+\begin{itemize}
+  \item Tech used, Language, Frameworks etc.
+  \item Implemented ABC feature
+  \item Optimised XYZ by 50\%
+\end{itemize}
+\end{comment}
+
+
+
+\end{document}
